@@ -5,6 +5,10 @@
  */
 package delmerespinal24_lab2_progra2;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Owner
@@ -14,9 +18,21 @@ public class FaceProgra extends javax.swing.JFrame {
     /**
      * Creates new form FaceProgra
      */
-    public FaceProgra() {
+    public FaceProgra(ArrayList<Usuario> ListUsers, Usuario miUsuario) {
+
+        for (Usuario LU : ListUsers) {
+            if (LU.equals(miUsuario)) {
+                this.miUsuario = LU;
+            }
+        }
+
+        this.ListUsers = ListUsers;
+
         initComponents();
     }
+
+    private ArrayList<Usuario> ListUsers;
+    private Usuario miUsuario;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,24 +43,303 @@ public class FaceProgra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_buscaramigos = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jl_usuarios = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        enviar_solicitud = new javax.swing.JButton();
+        jd_solicitudes = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_solicitudes = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
+        aceptar_solicitud = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jmi_agregar = new javax.swing.JMenuItem();
+        jmi_solicitudes = new javax.swing.JMenuItem();
+        Lista_Amigos = new javax.swing.JMenuItem();
+        Eliminar = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+
+        jl_usuarios.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(jl_usuarios);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Añadir amigos");
+
+        enviar_solicitud.setText("Enviar solicitud de amistad");
+        enviar_solicitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enviar_solicitudActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_buscaramigosLayout = new javax.swing.GroupLayout(jd_buscaramigos.getContentPane());
+        jd_buscaramigos.getContentPane().setLayout(jd_buscaramigosLayout);
+        jd_buscaramigosLayout.setHorizontalGroup(
+            jd_buscaramigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_buscaramigosLayout.createSequentialGroup()
+                .addGroup(jd_buscaramigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_buscaramigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(enviar_solicitud)
+                        .addGroup(jd_buscaramigosLayout.createSequentialGroup()
+                            .addGap(35, 35, 35)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_buscaramigosLayout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(jLabel1)))
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        jd_buscaramigosLayout.setVerticalGroup(
+            jd_buscaramigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_buscaramigosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(enviar_solicitud)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
+        jl_solicitudes.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(jl_solicitudes);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Solicitudes de amistad");
+
+        aceptar_solicitud.setText("Aceptar solicitud");
+        aceptar_solicitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptar_solicitudActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_solicitudesLayout = new javax.swing.GroupLayout(jd_solicitudes.getContentPane());
+        jd_solicitudes.getContentPane().setLayout(jd_solicitudesLayout);
+        jd_solicitudesLayout.setHorizontalGroup(
+            jd_solicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_solicitudesLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(jd_solicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_solicitudesLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(229, 229, 229))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_solicitudesLayout.createSequentialGroup()
+                        .addGroup(jd_solicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(aceptar_solicitud)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43))))
+        );
+        jd_solicitudesLayout.setVerticalGroup(
+            jd_solicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_solicitudesLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel2)
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(aceptar_solicitud)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 723, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 458, Short.MAX_VALUE)
+        );
+
+        jMenu3.setText("Inicio");
+
+        jmi_agregar.setText("Agregar amigos");
+        jmi_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_agregarActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jmi_agregar);
+
+        jmi_solicitudes.setText("Solicitudes");
+        jmi_solicitudes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_solicitudesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jmi_solicitudes);
+
+        Lista_Amigos.setText("Lista de amigos");
+        Lista_Amigos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Lista_AmigosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Lista_Amigos);
+
+        Eliminar.setText("Eliminar a un amigo");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Eliminar);
+
+        jMenuItem1.setText("Cerrar sesion");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Mensajes");
+
+        jMenuItem3.setText("Enviar mensaje");
+        jMenu4.add(jMenuItem3);
+
+        jMenuItem5.setText("Buzon de entrada");
+        jMenu4.add(jMenuItem5);
+
+        jMenuItem6.setText("Buzon de salida");
+        jMenu4.add(jMenuItem6);
+
+        jMenuBar2.add(jMenu4);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 723, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 479, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-  
+    private void jmi_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarActionPerformed
+        DefaultListModel lista = (DefaultListModel) jl_usuarios.getModel();
+        for (Usuario LU : ListUsers) {
+            if (!LU.equals(miUsuario)) {
+                if (!miUsuario.getListaAmigos().contains(LU)) {
+                    lista.addElement(LU);
+                }
+            }
+        }
+
+        jd_buscaramigos.setModal(true);
+        jd_buscaramigos.pack();
+        jd_buscaramigos.setLocationRelativeTo(this);
+        jd_buscaramigos.setVisible(true);
+    }//GEN-LAST:event_jmi_agregarActionPerformed
+
+    private void enviar_solicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviar_solicitudActionPerformed
+        DefaultListModel lista = (DefaultListModel) jl_usuarios.getModel();
+        int pos = jl_usuarios.getSelectedIndex();
+        Usuario Receptor = (Usuario) lista.get(pos);
+        for (Usuario LS : ListUsers) {
+            if (LS.equals(Receptor)) {
+                LS.getListaSolicitudes().add(miUsuario);
+                lista.remove(pos);
+            }
+        }
+        JOptionPane.showMessageDialog(this, "Solicitud enviada correctamente");
+    }//GEN-LAST:event_enviar_solicitudActionPerformed
+
+    private void jmi_solicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_solicitudesActionPerformed
+
+        DefaultListModel lista = (DefaultListModel) jl_solicitudes.getModel();
+        for (Usuario lS : miUsuario.getListaSolicitudes()) {
+            lista.addElement(lS);
+        }
+        jd_solicitudes.setModal(true);
+        jd_solicitudes.pack();
+        jd_solicitudes.setLocationRelativeTo(this);
+        jd_solicitudes.setVisible(true);
+    }//GEN-LAST:event_jmi_solicitudesActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new Principal(ListUsers).setVisible(true);
+
+        this.dispose();
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void aceptar_solicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptar_solicitudActionPerformed
+        DefaultListModel lista = (DefaultListModel) jl_solicitudes.getModel();
+        int pos = jl_solicitudes.getSelectedIndex();
+        for (Usuario LU : ListUsers) {
+            if (LU.equals(lista.get(pos))) {
+                miUsuario.getListaAmigos().add(LU);
+                LU.getListaAmigos().add(miUsuario);
+                miUsuario.getListaSolicitudes().remove(LU);
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, "Ha agregado un nuevo amigo");
+        lista.remove(pos);
+
+    }//GEN-LAST:event_aceptar_solicitudActionPerformed
+
+    private void Lista_AmigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lista_AmigosActionPerformed
+        String Amigos = "Lista de amigos: \n";
+        for (Usuario LU : miUsuario.getListaAmigos()) {
+            Amigos += ListUsers.indexOf(LU) + ") " + LU.toString() + "\n";
+        }
+        JOptionPane.showMessageDialog(this, Amigos);
+
+    }//GEN-LAST:event_Lista_AmigosActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        String Amigos = "Seleccione posicion a eliminar: \n";
+        for (Usuario LU : miUsuario.getListaAmigos()) {
+            Amigos += ListUsers.indexOf(LU) + ") " + LU.toString() + "\n";
+        }
+        int pos = Integer.parseInt(Amigos)
+    }//GEN-LAST:event_EliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JMenuItem Lista_Amigos;
+    private javax.swing.JButton aceptar_solicitud;
+    private javax.swing.JButton enviar_solicitud;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JDialog jd_buscaramigos;
+    private javax.swing.JDialog jd_solicitudes;
+    private javax.swing.JList<String> jl_solicitudes;
+    private javax.swing.JList<String> jl_usuarios;
+    private javax.swing.JMenuItem jmi_agregar;
+    private javax.swing.JMenuItem jmi_solicitudes;
     // End of variables declaration//GEN-END:variables
 }

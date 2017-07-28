@@ -7,6 +7,8 @@ import java.util.ArrayList;
  *
  * @author Owner
  */
+
+
 public class Usuario {
     private String nombre;
     private int edad;
@@ -14,7 +16,7 @@ public class Usuario {
     private String nick;
     private String password;
     private ArrayList<Usuario> ListaAmigos = new ArrayList();
-    private ArrayList<Solicitud> ListaSolicitudes = new ArrayList();
+    private ArrayList<Usuario> ListaSolicitudes = new ArrayList();
     private ArrayList<Mensaje> BandejaEntrada = new ArrayList();
     private ArrayList<Mensaje> BandejaSalida = new ArrayList();
 
@@ -74,11 +76,11 @@ public class Usuario {
         this.ListaAmigos = ListaAmigos;
     }
 
-    public ArrayList<Solicitud> getListaSolicitudes() {
+    public ArrayList<Usuario> getListaSolicitudes() {
         return ListaSolicitudes;
     }
 
-    public void setListaSolicitudes(ArrayList<Solicitud> ListaSolicitudes) {
+    public void setListaSolicitudes(ArrayList<Usuario> ListaSolicitudes) {
         this.ListaSolicitudes = ListaSolicitudes;
     }
 
@@ -98,9 +100,11 @@ public class Usuario {
         this.BandejaSalida = BandejaSalida;
     }
 
+   
+
     @Override
     public String toString() {
-        return nick ;
+        return nombre;
     }
     
     

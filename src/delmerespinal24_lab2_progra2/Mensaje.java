@@ -10,10 +10,10 @@ import java.util.Date;
 public class Mensaje {
     private String texto;
     private Usuario Emisor;
-    private String Receptor;
+    private Usuario Receptor;
     private Date Fecha;
 
-    public Mensaje(String texto, Usuario Emisor, String Receptor, Date Fecha) {
+    public Mensaje(String texto, Usuario Emisor, Usuario Receptor, Date Fecha) {
         this.texto = texto;
         this.Emisor = Emisor;
         this.Receptor = Receptor;
@@ -44,11 +44,11 @@ public class Mensaje {
         this.Emisor = Emisor;
     }
 
-    public String getReceptor() {
+    public Usuario getReceptor() {
         return Receptor;
     }
 
-    public void setReceptor(String Receptor) {
+    public void setReceptor(Usuario Receptor) {
         this.Receptor = Receptor;
     }
 
