@@ -10,10 +10,12 @@ import javax.swing.JOptionPane;
 public class Principal extends javax.swing.JFrame {
 
     public Principal() {
+      
         initComponents();
     }
     
     public Principal(ArrayList<Usuario> Usuarios){
+        
         initComponents();
         this.Usuarios = Usuarios;
         
