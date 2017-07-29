@@ -592,7 +592,7 @@ public class FaceProgra extends javax.swing.JFrame {
     private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
         DefaultListModel Lista = (DefaultListModel) jl_buzon.getModel();
         Lista.removeAllElements();
-        for (Mensaje mensaje : miUsuario.getBandejaEntrada()) {
+        for (Mensaje mensaje : miUsuario.getBandejaSalida()) {
             Lista.addElement(mensaje);
 
         }
