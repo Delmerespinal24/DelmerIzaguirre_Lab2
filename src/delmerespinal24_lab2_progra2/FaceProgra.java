@@ -507,7 +507,7 @@ public class FaceProgra extends javax.swing.JFrame {
     private void Lista_AmigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lista_AmigosActionPerformed
         String Amigos = "Lista de amigos: \n";
         for (Usuario LU : miUsuario.getListaAmigos()) {
-            Amigos += ListUsers.indexOf(LU) + ") " + LU.toString() + "\n";
+            Amigos += miUsuario.getListaAmigos().indexOf(LU) + ") " + LU.toString() + "\n";
         }
         JOptionPane.showMessageDialog(this, Amigos);
 
@@ -516,7 +516,7 @@ public class FaceProgra extends javax.swing.JFrame {
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         String Amigos = "Seleccione posicion a eliminar: \n";
         for (Usuario LU : miUsuario.getListaAmigos()) {
-            Amigos += ListUsers.indexOf(LU) + ") " + LU.toString() + "\n";
+            Amigos += miUsuario.getListaAmigos().indexOf(LU) + ") " + LU.toString() + "\n";
         }
         int pos = Integer.parseInt(JOptionPane.showInputDialog(Amigos));
         for (Usuario LU : miUsuario.getListaAmigos()) {
