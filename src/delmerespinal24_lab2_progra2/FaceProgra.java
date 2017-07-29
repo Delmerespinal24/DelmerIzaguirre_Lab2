@@ -559,6 +559,10 @@ public class FaceProgra extends javax.swing.JFrame {
                 LU.getBandejaEntrada().add(nuevo);
             }
         }
+        
+        JOptionPane.showMessageDialog(nuevo_mensaje, "Mensaje enviado");
+        ta_texto.setText("");
+        nuevo_mensaje.dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
